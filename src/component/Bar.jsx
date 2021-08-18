@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Bar = ({ active, onChange }) => {
+  if (!active) {
+    active = 1;
+  }
   return (
     <div>
       <Continer>

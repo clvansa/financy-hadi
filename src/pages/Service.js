@@ -8,12 +8,16 @@ import { data } from '../data/data'
 const Service = (porps) => {
     const ServiceRef = useRef();
 
-    useEffect(() => {
-        ServiceRef.current.scrollIntoView()
-    }, [])
-
+    
     const params = porps.match.params.id
     const item = data.find(item => item.type === params)
+    
+    useEffect(() => {
+        ServiceRef.current.scrollIntoView({
+            behavior:"smooth"
+        })
+    }, [params])
+
 
     return (
         <Container ref={ServiceRef}>

@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Bar from "./Bar";
-import Image1 from '../image/1.png'
-import Image2 from '../image/2.jpg'
-import Image3 from '../image/3.jpg'
+import Image1 from "../image/1.png";
+import Image2 from "../image/2.jpg";
+import Image3 from "../image/3.jpg";
 
 const About = () => {
   const [index, setIndex] = useState({
-    img1: 0,
+    img1: 2,
     img2: 0,
-    img3: 2,
+    img3: 0,
   });
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
 
   const onChange = (id) => {
     setActive(Number(id));
@@ -68,7 +68,7 @@ const About = () => {
           </ImageBox>
         </Left>
         <Right>
-          {active === 1 ? (
+          {active === 1 || active === 0 ? (
             <Desc>
               شركة للاستشارات المالية والخدمات المحاسبية والتدريبية وفق
               استراتيجيات توافق احتياجاتكم المالية, بالتعاون مع مجموعة مميزة من
@@ -76,9 +76,9 @@ const About = () => {
             </Desc>
           ) : active === 2 ? (
             <Desc>
-              يمتلك مكتبنا فريق عمل مميز لديه خبرات كبيرة في مجال مراجعة
-              حسابات الشركات الفردية وشركات الأشخاص والشركات المساهمة العاملة في
-              كافة المجالات التجارية
+              يمتلك مكتبنا فريق عمل مميز لديه خبرات كبيرة في مجال مراجعة حسابات
+              الشركات الفردية وشركات الأشخاص والشركات المساهمة العاملة في كافة
+              المجالات التجارية
             </Desc>
           ) : (
             <Desc>
@@ -193,7 +193,6 @@ const Desc = styled.p`
 
   @media (max-width: 480px) {
     width: 300px;
- 
   }
 `;
 
